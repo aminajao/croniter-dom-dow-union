@@ -1,0 +1,34 @@
+schema_version = "1.3"
+artifacts = []
+
+[task]
+name = "Andela/Andela-terminal-trial-task"
+description = "Restore union semantics for the day-of-month / day-of-week split in croniter, so a schedule whose day-of-month side can never match still yields its day-of-week dates."
+authors = []
+keywords = ["debugging", "python", "cron", "scheduling"]
+
+[metadata]
+category = "debugging"
+difficulty_explanation = "Requires understanding that cron combines a restricted day-of-month and day-of-week as a union, and that '#' and 'W' schedules are carried outside those fields so they remain an intersection. The obvious fix -- swallowing the failure on both halves -- restores the headline case but silently drops a field from those schedules."
+
+[verifier]
+timeout_sec = 600.0
+collect = []
+
+[verifier.env]
+
+[agent]
+# Diagnosing this requires reading the day-of-month / day-of-week expansion
+# path and running the existing suite to check for regressions. The scaffolded
+# 600s default cuts that off mid-investigation.
+timeout_sec = 1800.0
+
+[environment]
+network_mode = "no-network"
+build_timeout_sec = 600.0
+os = "linux"
+mcp_servers = []
+
+[environment.env]
+
+[solution.env]
