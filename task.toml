@@ -2,7 +2,7 @@ schema_version = "1.3"
 artifacts = []
 
 [task]
-name = "Andela/Andela-terminal-trial-task"
+name = "aminajao/croniter-dom-dow-union"
 description = "Restore union semantics for the day-of-month / day-of-week split in croniter, so a schedule whose day-of-month side can never match still yields its day-of-week dates."
 authors = []
 keywords = ["debugging", "python", "cron", "scheduling"]
